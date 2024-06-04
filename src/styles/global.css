@@ -1,0 +1,32 @@
+:root {
+    --color-background:#F3F3F3;
+    --color-background-nav:#500f83;    
+    --color-text-top: #7e07c5;
+    --color-container-button: #cb9fff;
+    --color-text-container: #001930
+  }
+
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  html,
+  body{
+    background-color: var(--color-background);
+  }
+
+  a{
+    text-decoration: none;
+    transition: 0.2s opacity;
+  }
+
+  a:hover{
+    opacity: 0.8;
+}
+
+.container{
+    width: 90%;    
+}
