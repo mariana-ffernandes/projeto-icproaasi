@@ -6,19 +6,19 @@
       </header>
       <div class="devices-container">
         <div class="device" @click="selectDevice('intra-aural')">
-            <img src="https://www.centroauditivosaogabriel.com.br/wp-content/uploads/2019/12/aparelhos-auditivos.png" alt="Descrição da Imagem" />
+            <img src="@\assets\icon_intraaural.png" alt="Descrição da Imagem" />
           <p>Intra-aural</p>
         </div>
         <div class="device" @click="selectDevice('mini-retro')">
-          <img src="https://www.centroauditivosaogabriel.com.br/wp-content/uploads/2019/12/aparelhos-auditivos.png"/>
+          <img src="@\assets\icon_miniretro.png"/>
           <p>Mini Retro<br>com tubo fino</p>
         </div>
         <div class="device" @click="selectDevice('retroauricular-receptor')">
-            <img src="https://www.centroauditivosaogabriel.com.br/wp-content/uploads/2019/12/aparelhos-auditivos.png"/>
+            <img src="@\assets\icon_retroauricular.png"/>
           <p>Retroauricular<br>com receptor<br>no canal</p>
         </div>
         <div class="device" @click="selectDevice('retroauricular-molde')">
-            <img src="https://www.centroauditivosaogabriel.com.br/wp-content/uploads/2019/12/aparelhos-auditivos.png"/>
+            <img src="@\assets\icon_retromolde.png"/>
           <p>Retroauricular com molde</p>
         </div>
       </div>
