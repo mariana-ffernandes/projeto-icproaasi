@@ -19,24 +19,25 @@
   </div>
 </template>
   
-  <script>  
-  export default {
-    name: 'DeviceHandlingPage',
-    methods: {
-      navigateToContent(title, videoUrl, text) {
-        this.$router.push({
-          path: '/content/1',
-          query: {
-            title: title,
-            videoUrl: videoUrl,
-            text: text
-          }
-        });
-      }
+<script>  
+export default {
+  name: 'DeviceHandlingPage',
+  methods: {
+    navigateToContent(title, videoUrl, text) {
+      this.$router.push({
+        path: '/content/1',
+        query: {
+          title: title,
+          videoUrl: videoUrl,
+          text: text,
+          from: '/device-handling',
+          pageTitle: 'Uso e Manuseio do Aparelho'
+        }
+      });
     }
   }
-  </script>
-
+}
+</script>
 
   <style scoped>
   .device-handling-page {

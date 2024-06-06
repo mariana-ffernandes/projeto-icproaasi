@@ -1,35 +1,46 @@
 <template>
-    <div>
-      <div class="content">
-        <div class="header-container">
-          <router-link to="/device-handling" class="back-button">← voltar</router-link>
-          <h1 class="main-title">Uso e Manuseio do Aparelho</h1>
+  <div>
+    <div class="content">
+      <div class="header-container">
+        <button @click="goBack" class="back-button">← voltar</button>
+        <h1 class="main-title">{{ pageTitle }}</h1>
+      </div>
+      <div class="main-content">
+        <div class="video-container">
+          <iframe :src="videoUrl" frameborder="0" allowfullscreen></iframe>
         </div>
-        <div class="main-content">
-          <div class="video-container">
-            <iframe :src="videoUrl" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <div class="text-section">
-            <h2 class="secondary-title">{{ title }}</h2>
-            <div class="text-container">
-              <p v-for="(paragraph, index) in text" :key="index">{{ paragraph }}</p>
-            </div>
+        <div class="text-section">
+          <h2 class="secondary-title">{{ title }}</h2>
+          <div class="text-container">
+            <p v-for="(paragraph, index) in text" :key="index">{{ paragraph }}</p>
           </div>
         </div>
       </div>
     </div>
-  </template>
-  
-  <script>  
-  export default {
-    name: 'ContentPage',
-    props: {
-      title: String,
-      videoUrl: String,
-      text: Array
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ContentPage',
+  props: {
+    title: String,
+    videoUrl: String,
+    text: Array
+  },
+  computed: {
+    pageTitle() {
+      return this.$route.query.pageTitle || 'Conteúdo';
+    }
+  },
+  methods: {
+    goBack() {
+      const from = this.$route.query.from || '/';
+      this.$router.push(from);
     }
   }
-  </script>
+}
+</script>
   
   <style scoped>
   .content {
