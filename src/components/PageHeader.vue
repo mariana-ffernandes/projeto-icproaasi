@@ -30,7 +30,7 @@ nav {
 }
 
 .title {
-  color: #FFFFFF;
+  color: var(--color-white);
   font-family: 'Montserrat', sans-serif;
   font-size: 50px;
   font-weight: 500;

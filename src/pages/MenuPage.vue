@@ -76,12 +76,12 @@ main {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #000000;
+  color: var(--color-black)000;
   margin: 10px 0;
   width: 100%;
   max-width: 30rem;
   padding: 20px;
-  background-color: #FFFFFF;
+  background-color: var(--color-background);
   border: none;
   box-shadow: 5px 6px 1px 1px var(--color-text-top);
   cursor: pointer;
@@ -94,8 +94,8 @@ main {
   margin-top: 20px;
   margin-bottom: 40px;
   padding: 8px 20px;
-  background-color: #FFFFFF;
-  color: #000000;
+  background-color: var(--color-background);
+  color: var(--color-black)000;
   border: none;
   cursor: pointer;
   box-shadow: 5px 5px 1px -1px var(--color-text-top);

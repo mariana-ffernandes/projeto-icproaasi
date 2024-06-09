@@ -15,7 +15,7 @@
             <div class="buttons-container">
               <router-link to="/login" class="button">Entrar</router-link>
               <router-link to="/register" class="button">Cadastrar</router-link>
-              <router-link to="/about" class="button">Sobre o ProAASI</router-link>
+              <router-link to="/terms" class="button">Sobre o ProAASI</router-link>
             </div>
           </div>
         </div>
@@ -109,12 +109,12 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
-  color: #000000;
+  color: var(--color-black)000;
   margin: 10px 0;
   width: 80%;
   max-width: 30rem;
   padding: 20px;
-  background-color: #FFFFFF;
+  background-color: var(--color-background);
   border: none;
   box-shadow: 5px 6px 1px 1px var(--color-shadow-button);
   cursor: pointer;
@@ -122,7 +122,7 @@
   }
   
   .button:hover {
-    background-color: #f0f0f0;
+    background-color: var(--color-background);
     color: #333;
   }
   </style>

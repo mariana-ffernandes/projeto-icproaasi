@@ -16,8 +16,8 @@
       </div>
         <button class="login-button">Iniciar sessão</button>
         <div class="extra-buttons">
-          <button class="extra-button">Esqueci a senha</button>
-          <button class="extra-button">Não tenho cadastro</button>
+          <router-link to="/reset-password" class="extra-button">Esqueci a senha</router-link>
+          <router-link to="/register" class="extra-button">Não tenho cadastro</router-link>
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@
     flex-direction: column;
     align-items: center;    
     height: 100vh;
-    background-color: #f5f5f5;
+    background-color: var(--color-background);
     padding: 20px;
     margin-top: 100px;
   }
@@ -55,11 +55,10 @@
 
 .logo {
   width: 80px;
-  margin-right: 10px;
 }
 
 .header-title {
-  color: var(--color-text-container);
+  color: var(--color-black);
   font-family: 'Montserrat', sans-serif; 
   font-size: 3rem;
   font-weight: 500;
@@ -111,8 +110,8 @@
 }
   
   .login-button {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--color-background);
+    color: var(--color-black);
     padding: 10px 20px;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
@@ -129,7 +128,7 @@
   }
   
   .login-button:hover {
-    background-color: #f0f0f0;
+    background-color: var(--color-background);
     color: #333;
   }
   
@@ -139,10 +138,11 @@
   }
   
   .extra-button {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--color-background);
+    color: var(--color-black);
     padding: 10px 20px;
     text-decoration: none;
+    text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     font-weight: 500;
@@ -155,7 +155,7 @@
   }
   
   .extra-button:hover {
-    background-color: #f0f0f0;
+    background-color: var(--color-background);
     color: #333;
   }
 

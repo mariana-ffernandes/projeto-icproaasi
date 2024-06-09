@@ -63,8 +63,8 @@ export default {
     font-size: 1.2rem;
     font-weight: 600;
     padding: 8px 20px;
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: var(--color-white);
+    color: var(--color-black);
     border: none;
     cursor: pointer;
     box-shadow: 5px 5px 1px -1px var(--color-text-top);
@@ -102,7 +102,7 @@ export default {
   .strategy-button {
     background-color: var(--color-container-button);
     border: none;
-    color: #000;
+    color: var(--color-black);
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
     font-weight: 500;
@@ -118,8 +118,8 @@ export default {
     font-weight: 400;
     margin-top: 20px;
     padding: 8px 20px;
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: var(--color-white);
+    color: var(--color-black);
     border: none;
     cursor: pointer;
     box-shadow: 5px 5px 1px -1px var(--color-text-top);

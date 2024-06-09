@@ -54,8 +54,8 @@
   font-weight: 600;
   margin-top: 20px;
   padding: 8px 20px; 
-  background-color: #FFFFFF;
-  color: #000000;
+  background-color: var(--color-background);
+  color: var(--color-black)000;
   border: none;
   cursor: pointer;
   box-shadow: 5px 5px 1px -1px var(--color-text-top);    
@@ -114,8 +114,8 @@
   font-weight: 600;
   margin-top: 20px;
   padding: 8px 20px; 
-  background-color: #FFFFFF;
-  color: #000000;
+  background-color: var(--color-background);
+  color: var(--color-black)000;
   border: none;
   cursor: pointer;
   box-shadow: 5px 5px 1px -1px var(--color-text-top);

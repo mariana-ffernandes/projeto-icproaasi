@@ -57,15 +57,15 @@ export default {
   }
   
   .back-button {
-    color: #6b5b95;
+    color: var(--color-container-button);
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     margin-right: 25px;
     padding: 8px 20px;
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: var(--color-white);
+    color: var(--color-black);
     border: none;
     cursor: pointer;
     box-shadow: 5px 5px 1px -1px var(--color-text-top);
