@@ -1,7 +1,7 @@
 <template>
   <header>
       <nav class="container">
-          <a href="/"><img alt="icon" id="logo" src=""> </a>
+          <img alt="icon" id="logo" src="@\assets\logoProAASI.png">
           <h1 class="title">ProAASI</h1>
       </nav>
   </header>
@@ -30,7 +30,7 @@ nav {
 }
 
 .title {
-  color: #FFFFFF;
+  color: var(--color-white);
   font-family: 'Montserrat', sans-serif;
   font-size: 50px;
   font-weight: 500;
