@@ -34,6 +34,9 @@ export default {
           pageTitle: 'Uso e Manuseio do Aparelho'
         }
       });
+    },
+    exit() {
+      this.$router.push('/');
     }
   }
 }

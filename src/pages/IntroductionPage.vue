@@ -19,8 +19,8 @@
         this.$router.go(-1);
       },
       exit() {
-        console.log('Saindo...');
-      }
+      this.$router.push('/');
+    }
     }
   }
   </script>

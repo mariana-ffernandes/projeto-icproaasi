@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<script>  
+<script>
 export default {
   name: 'CommunicationStrategiesPage',
   methods: {
@@ -33,6 +33,9 @@ export default {
           pageTitle: 'Estratégias de Comunicação'
         }
       });
+    },
+    exit() {
+      this.$router.push('/');
     }
   }
 }
