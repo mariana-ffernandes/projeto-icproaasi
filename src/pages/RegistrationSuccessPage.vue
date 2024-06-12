@@ -8,7 +8,7 @@
       </div>
       <div class="success-container">
         <h2 class="success-message">Cadastro realizado!<br />Bem-vindo(a) ao ProAASI</h2>
-        <router-link to="/select-device" class="success-button">Entrar</router-link>
+        <router-link to="/menu" class="success-button">Entrar</router-link>
       </div>
       <PageFooter />
     </div>

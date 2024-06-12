@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-//import MenuPage from '@/pages/MenuPage';
+import MenuPage from '@/pages/MenuPage';
 import SelectDevicePage from '@/pages/SelectDevicePage';
 import IntroductionPage from '@/pages/IntroductionPage';
 import CommunicationStrategiesPage from '@/pages/CommunicationStrategiesPage';
@@ -11,9 +11,11 @@ import ResetPasswordPage from '@/pages/ResetPasswordPage';
 import RegisterPage from '@/pages/RegisterPage';
 import TermsPage from '@/pages/TermsPage';
 import RegistrationSuccessPage from '@/pages/RegistrationSuccessPage';
+import IdentificationPage from '@/pages/IdentificationPage'; 
 
 const routes = [
   { path: '/', name: 'Home', component: HomePage },
+  { path: '/menu', name: 'Menu', component: MenuPage },
   { path: '/select-device', name: 'SelectDevice', component: SelectDevicePage },
   { path: '/introduction', name: 'Introduction', component: IntroductionPage },
   { path: '/communication-strategies', name: 'CommunicationStrategies', component: CommunicationStrategiesPage },
@@ -32,7 +34,8 @@ const routes = [
   { path: '/reset-password', name: 'ResetPassword', component: ResetPasswordPage },
   { path: '/register', name: 'Register', component: RegisterPage },
   { path: '/terms', name: 'Terms', component: TermsPage },
-  { path: '/registration-success', name: 'RegistrationSuccess', component: RegistrationSuccessPage }
+  { path: '/registration-success', name: 'RegistrationSuccess', component: RegistrationSuccessPage },
+  { path: '/identification', name: 'Identification', component: IdentificationPage }
 ];
 
 const router = createRouter({

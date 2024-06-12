@@ -1,47 +1,48 @@
 <template>
-    <div class="select-device">
-      <header>
-        <button @click="goBack" class="back-button">← voltar</button>
-        <h1 class="title">Selecione o aparelho</h1>
-      </header>
-      <div class="devices-container">
-        <div class="device" @click="selectDevice('intra-aural')">
-            <img src="@\assets\icon_intraaural.png" alt="Descrição da Imagem" />
-          <p>Intra-aural</p>
-        </div>
-        <div class="device" @click="selectDevice('mini-retro')">
-          <img src="@\assets\icon_miniretro.png"/>
-          <p>Mini Retro<br>com tubo fino</p>
-        </div>
-        <div class="device" @click="selectDevice('retroauricular-receptor')">
-            <img src="@\assets\icon_retroauricular.png"/>
-          <p>Retroauricular<br>com receptor<br>no canal</p>
-        </div>
-        <div class="device" @click="selectDevice('retroauricular-molde')">
-            <img src="@\assets\icon_retromolde.png"/>
-          <p>Retroauricular com molde</p>
-        </div>
+  <div class="select-device">
+    <header>
+      <router-link to="/menu" class="back-button">← voltar</router-link>
+      <h1 class="title">Selecione o aparelho</h1>
+    </header>
+    <div class="devices-container">
+      <div class="device" @click="selectDevice('intra-aural')">
+        <img src="@/assets/icon_intraaural.png" alt="Descrição da Imagem" />
+        <p>Intra-aural</p>
       </div>
-      <button @click="exit" class="exit-button">Sair</button>
+      <div class="device" @click="selectDevice('mini-retro')">
+        <img src="@/assets/icon_miniretro.png"/>
+        <p>Mini Retro<br>com tubo fino</p>
+      </div>
+      <div class="device" @click="selectDevice('retroauricular-receptor')">
+        <img src="@/assets/icon_retroauricular.png"/>
+        <p>Retroauricular<br>com receptor<br>no canal</p>
+      </div>
+      <div class="device" @click="selectDevice('retroauricular-molde')">
+        <img src="@/assets/icon_retromolde.png"/>
+        <p>Retroauricular com molde</p>
+      </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
+    <button @click="exit" class="exit-button">Sair</button>
+  </div>
+</template>
+
+<script>
+import { mapMutations } from 'vuex';
+
+export default {
   name: 'SelectDevicePage',
   methods: {
-    goBack() {
-      this.$router.go(-1); 
-    },
+    ...mapMutations(['setSelectedDevice']),
     selectDevice(device) {
-      console.log(`Selecionando o dispositivo: ${device}`);
+      this.setSelectedDevice(device);
+      this.$router.push({ name: 'Identification' });
     },
     exit() {
-      console.log('Saindo...');
+      this.$router.push('/');
     }
   }
-  }
-  </script>
+}
+</script>
   
   <style scoped>
   .select-device {
@@ -76,34 +77,37 @@
   }
   
   .devices-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 100%;
-  background-color: var(--color-container-button);
-  padding: 40px auto;
-  border-radius: none;
-  }
+    background-color: var(--color-container-button);
+    border: none;
+    color: var(--color-black);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    width: 95%;
+    height: 25rem;
+}
   
   .device {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  margin: auto;
   cursor: pointer;
   width: 150px;
   word-wrap: break-word;
   }
   
-  .device img {
+  /* .device img {
   width: 100%;
   height: auto; 
-  }
+  } */
   
   .device p {
   margin-top: 10px;
   color: var(--color-text-container);
-  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
   font-weight: 500;
   text-align: center;
   white-space: normal;

@@ -3,31 +3,32 @@
     <div class="text-top">O que gostaria de acessar?</div>
     <div class="container">
       <div class="button-container">
-        <button @click="navigateTo('introduction')">Introdução ao Conteúdo</button>
-        <button @click="navigateTo('device-handling')">Uso e Manuseio do Aparelho</button>
-        <button @click="navigateTo('communication-strategies')">Estratégias de Comunicação</button>
+        <button @click="selectItem('introduction')">Introdução ao Conteúdo</button>
+        <button @click="selectItem('device-handling')">Uso e Manuseio do Aparelho</button>
+        <button @click="selectItem('communication-strategies')">Estratégias de Comunicação</button>
       </div>
     </div>
-    <button class="exit-button">Sair</button>
+    <button class="exit-button" @click="exit">Sair</button>
   </main>
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   name: 'MenuPage',
   methods: {
-    navigateTo(route) {
-      this.$router.push(`/${route}`);
+    ...mapMutations(['setSelectedItem']),
+    selectItem(item) {
+      this.setSelectedItem(item);
+      if (item === 'introduction') {
+        this.$router.push({ name: 'Introduction' });
+      } else {
+        this.$router.push({ name: 'SelectDevice' });
+      }
     },
-    navigateToContent(title, videoUrl, text) {
-      this.$router.push({
-        path: '/content/1',
-        query: {
-          title: title,
-          videoUrl: videoUrl,
-          text: text
-        }
-      });
+    exit() {
+      this.$router.push('/');
     }
   }
 }

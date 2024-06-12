@@ -1,7 +1,7 @@
 <template>
   <div class="device-handling-page">
     <header class="header-container">
-      <router-link to="/" class="back-button">← voltar</router-link> 
+      <router-link to="/identification" class="back-button">← voltar</router-link> 
       <h1 class="title">Uso e Manuseio do Aparelho</h1>
     </header>
     <main>
@@ -36,7 +36,7 @@ export default {
       });
     },
     exit() {
-      this.$router.push('/');
+      this.$router.push('/menu');
     }
   }
 }

@@ -6,28 +6,50 @@
         <h1 class="header-title">ProAASI</h1>
       </div>
     </div>
-      <div class="login-container">
-        <h1 class="title">Entrar</h1>
+    <div class="login-container">
+      <h1 class="title">Entrar</h1>
       <div class="form-group">
-        <input type="text" id="cpf" class="form-control" placeholder="CPF" />
+        <input type="text" id="cpf" class="form-control" placeholder="CPF" v-model="cpf" @input="formatCPF" maxlength="14" />
       </div>
       <div class="form-group">
-        <input type="password" id="password" class="form-control" placeholder="Senha" />
+        <input type="password" id="password" class="form-control" placeholder="Senha" v-model="password" />
       </div>
-        <button class="login-button">Iniciar sessão</button>
-        <div class="extra-buttons">
-          <router-link to="/reset-password" class="extra-button">Esqueci a senha</router-link>
-          <router-link to="/register" class="extra-button">Não tenho cadastro</router-link>
-        </div>
+      <button class="login-button" @click="login">Iniciar sessão</button>
+      <div class="extra-buttons">
+        <router-link to="/reset-password" class="extra-button">Esqueci a senha</router-link>
+        <router-link to="/register" class="extra-button">Não tenho cadastro</router-link>
       </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'LoginPage'
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'LoginPage',
+  data() {
+    return {
+      cpf: '',
+      password: ''
+    };
+  },
+  methods: {
+    formatCPF() {
+      const cpf = this.cpf.replace(/\D/g, '');
+      const formattedCPF = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+      this.cpf = formattedCPF.slice(0, 14);
+    },
+    login() {
+      console.log('CPF:', this.cpf);
+      console.log('Senha:', this.password);
+      if (this.cpf === '123.456.789-00' && this.password === 'senha123') {
+        this.$router.push({ name: 'Menu' });
+      } else {
+        alert('CPF ou senha incorretos.');
+      }
+    }
   }
-  </script>
+}
+</script>
   
   <style scoped>
   .login-page {

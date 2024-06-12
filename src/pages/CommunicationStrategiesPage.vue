@@ -1,17 +1,17 @@
 <template>
   <div class="communication-strategies-page">
     <header class="header-container">
-      <router-link to="/" class="back-button">← voltar</router-link> 
+      <router-link to="/identification" class="back-button">← voltar</router-link> 
       <h1 class="title">Estratégias de Comunicação</h1>
     </header>
     <main>
       <div class="buttons-container">
-        <button @click="navigateToContent('Ainda estou com dúvidas', 'https://www.youtube.com/embed/video-id-1', 'Para desligar o aparelho abra o compartimento de pilha. Para ligar o aparelho feche o compartimento de pilha.')" class="strategy-button">Desligar e ligar o aparelho</button>
-        <button @click="navigateToContent('Ambientes para a comunicação', 'https://www.youtube.com/embed/video-id-2', 'O aparelho da orelha direita tem um sinal vermelho. O aparelho da orelha esquerda tem um sinal azul. Se a observação for difícil, peça ao fonoaudiólogo para fazer um sinal maior de marcação.')" class="strategy-button">Identificar qual aparelho é de cada orelha</button>
-        <button @click="navigateToContent('Como devo me comunicar', 'https://www.youtube.com/embed/video-id-3', 'Limpe o aparelho auditivo diariamente. Recomenda-se que a limpeza do aparelho seja feita sobre um pano macio, em cima de uma mesa, para evitar que o aparelho caia e seja danificado. Use uma escovinha/removedor de cera e/ou pano macio e seco para remover qualquer cera ou sujeira acumulada ao redor do canal e do compartimento da bateria. Nunca usar água, produtos de limpeza ou óleo para limpar seu aparelho auditivo.')" class="strategy-button">Limpar o aparelho</button>
-        <button @click="navigateToContent('E o desconforto?', 'https://www.youtube.com/embed/video-id-4', 'Retire o lacre da pilha e espere 1 minuto. Abra o compartimento da pilha posicionando sua unha abaixo da borda da tampa móvel e puxe-a para fora com cuidado. Coloque a pilha no compartimento, lembre-se que o lado com sinal + (lado liso) da pilha deve estar para cima, ou do lado mais aberto do compartimento. Logo em seguida, feche o compartimento de pilha.')" class="strategy-button">Retirar e colocar pilhas</button>
-        <button @click="navigateToContent('Não consegui entender', 'https://www.youtube.com/embed/video-id-5', 'Com a ferramenta adequada, retire o protetor de cera usado. Do outro lado da haste está o filtro limpo. Encaixe a saída do aparelho no filtro limpo.')" class="strategy-button">Trocar o filtro de cera</button>
-        <button @click="navigateToContent('Uso do aparelho auditivo', 'https://www.youtube.com/embed/video-id-6', 'O aparelho deve ser guardado...')" class="strategy-button">Onde guardar o aparelho</button>
+        <button @click="navigateToContent('Ainda estou com dúvidas', 'https://www.youtube.com/embed/video-id-1', 'Para desligar o aparelho abra o compartimento de pilha. Para ligar o aparelho feche o compartimento de pilha.')" class="strategy-button">Ainda estou com dúvidas</button>
+        <button @click="navigateToContent('Ambientes para a comunicação', 'https://www.youtube.com/embed/video-id-2', 'O aparelho da orelha direita tem um sinal vermelho. O aparelho da orelha esquerda tem um sinal azul. Se a observação for difícil, peça ao fonoaudiólogo para fazer um sinal maior de marcação.')" class="strategy-button">Ambientes para a comunicação</button>
+        <button @click="navigateToContent('Como devo me comunicar', 'https://www.youtube.com/embed/video-id-3', 'Limpe o aparelho auditivo diariamente. Recomenda-se que a limpeza do aparelho seja feita sobre um pano macio, em cima de uma mesa, para evitar que o aparelho caia e seja danificado. Use uma escovinha/removedor de cera e/ou pano macio e seco para remover qualquer cera ou sujeira acumulada ao redor do canal e do compartimento da bateria. Nunca usar água, produtos de limpeza ou óleo para limpar seu aparelho auditivo.')" class="strategy-button">Como devo me comunicar</button>
+        <button @click="navigateToContent('E o desconforto?', 'https://www.youtube.com/embed/video-id-4', 'Retire o lacre da pilha e espere 1 minuto. Abra o compartimento da pilha posicionando sua unha abaixo da borda da tampa móvel e puxe-a para fora com cuidado. Coloque a pilha no compartimento, lembre-se que o lado com sinal + (lado liso) da pilha deve estar para cima, ou do lado mais aberto do compartimento. Logo em seguida, feche o compartimento de pilha.')" class="strategy-button">E o desconforto?</button>
+        <button @click="navigateToContent('Não consegui entender', 'https://www.youtube.com/embed/video-id-5', 'Com a ferramenta adequada, retire o protetor de cera usado. Do outro lado da haste está o filtro limpo. Encaixe a saída do aparelho no filtro limpo.')" class="strategy-button">Não consegui entender</button>
+        <button @click="navigateToContent('Uso do aparelho auditivo', 'https://www.youtube.com/embed/video-id-6', 'O aparelho deve ser guardado...')" class="strategy-button">Uso do aparelho auditivo</button>
       </div>
       <button @click="exit" class="exit-button">Sair</button>
     </main>
@@ -35,7 +35,7 @@ export default {
       });
     },
     exit() {
-      this.$router.push('/');
+      this.$router.push('/menu');
     }
   }
 }
