@@ -1,51 +1,24 @@
 <template>
   <div class="login-page">
-    <div class="header">
-      <div class="logo-title-container">
-        <img src="@/assets/logoProAASI.png" alt="ProAASI Logo" class="logo" />
-        <h1 class="header-title">ProAASI</h1>
-      </div>
-    </div>
-    <div class="login-container">
-      <h1 class="title">Entrar</h1>
-      <div class="form-group">
-        <input type="text" id="cpf" class="form-control" placeholder="CPF" v-model="cpf" @input="formatCPF" maxlength="14" />
-      </div>
-      <div class="form-group">
-        <input type="password" id="password" class="form-control" placeholder="Senha" v-model="password" />
-      </div>
-      <button class="login-button" @click="login">Iniciar sessão</button>
-      <div class="extra-buttons">
-        <router-link to="/reset-password" class="extra-button">Esqueci a senha</router-link>
-        <router-link to="/register" class="extra-button">Não tenho cadastro</router-link>
-      </div>
-    </div>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdztn-p55WxTxzkUFcOoy-aANK-tfonqi8CwjqY2dDb1gkOSg/viewform"
+      class="google-forms"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      style="border: none; width: 100%; height: 100vh;">
+      Carregando…
+    </iframe>
+    <button @click="proceed" class="proceed-button">Prosseguir</button>
   </div>
 </template>
 
 <script>
 export default {
   name: 'LoginPage',
-  data() {
-    return {
-      cpf: '',
-      password: ''
-    };
-  },
   methods: {
-    formatCPF() {
-      const cpf = this.cpf.replace(/\D/g, '');
-      const formattedCPF = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-      this.cpf = formattedCPF.slice(0, 14);
-    },
-    login() {
-      console.log('CPF:', this.cpf);
-      console.log('Senha:', this.password);
-      if (this.cpf === '123.456.789-00' && this.password === 'senha123') {
-        this.$router.push({ name: 'Menu' });
-      } else {
-        alert('CPF ou senha incorretos.');
-      }
+    proceed() {
+      this.$router.push({ name: 'Identification' });
     }
   }
 }
@@ -56,12 +29,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  background-color: var(--color-background);
-  padding: 20px;
-  margin-top: 100px;
+  background-color: #f2e7f9;
 }
-
 .header {
   display: flex;
   flex-direction: column;
@@ -177,6 +146,27 @@ label {
 }
 
 .extra-button:hover {
+  background-color: var(--color-background);
+  color: #333;
+}
+
+.proceed-button {
+  background-color: var(--color-background);
+  color: var(--color-black);
+  padding: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0px;
+  box-shadow: 2px 3px 1px 1px var(--color-shadow-button);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 20px;
+  align-self: center;
+}
+
+.proceed-button:hover {
   background-color: var(--color-background);
   color: #333;
 }

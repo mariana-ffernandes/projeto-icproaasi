@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <router-view v-slot="{ Component, route }">
-      <PageHeader v-if="route.name !== 'Home' && route.name !== 'Login' &&  route.name !== 'ResetPassword' &&  route.name !== 'Register' &&  route.name !== 'Terms' &&  route.name !== 'RegistrationSuccess'" />
+      <PageHeader v-if="route.name !== 'Home' && route.name !== 'Login' &&  route.name !== 'ResetPassword' &&  route.name !== 'Register' &&  route.name !== 'About' &&  route.name !== 'RegistrationSuccess'" />
       <component :is="Component" />
       <PageFooter v-if="route.name === 'Login'" />
       <PageFooter v-if="route.name === 'ResetPassword'" />
       <PageFooter v-if="route.name === 'Register'" />
-      <PageFooter v-if="route.name === 'Terms'" />
+      <PageFooter v-if="route.name === 'About'" />
       <PageFooter v-if="route.name === 'RegistrationSuccess'" />
     </router-view>
   </div>

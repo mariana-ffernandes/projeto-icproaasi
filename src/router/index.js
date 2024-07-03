@@ -5,37 +5,29 @@ import IntroductionPage from '@/pages/IntroductionPage';
 import CommunicationStrategiesPage from '@/pages/CommunicationStrategiesPage';
 import DeviceHandlingPage from '@/pages/DeviceHandlingPage';
 import ContentPage from '@/pages/ContentPage';
-import HomePage from '@/pages/HomePage'
+import HomePage from '@/pages/HomePage';
 import LoginPage from '@/pages/LoginPage';
-import ResetPasswordPage from '@/pages/ResetPasswordPage';
-import RegisterPage from '@/pages/RegisterPage';
-import TermsPage from '@/pages/TermsPage';
-import RegistrationSuccessPage from '@/pages/RegistrationSuccessPage';
+import AboutPage from '@/pages/AboutPage';
 import IdentificationPage from '@/pages/IdentificationPage'; 
 
 const routes = [
   { path: '/', name: 'Home', component: HomePage },
-  { path: '/menu', name: 'Menu', component: MenuPage },
-  { path: '/select-device', name: 'SelectDevice', component: SelectDevicePage },
+  { path: '/login', name: 'Login', component: LoginPage },
+  { path: '/identification', name: 'Identification', component: IdentificationPage },
   { path: '/introduction', name: 'Introduction', component: IntroductionPage },
+  { path: '/select-device', name: 'SelectDevice', component: SelectDevicePage },
+  { path: '/menu', name: 'Menu', component: MenuPage },
   { path: '/communication-strategies', name: 'CommunicationStrategies', component: CommunicationStrategiesPage },
   { path: '/device-handling', name: 'DeviceHandling', component: DeviceHandlingPage },
-  {
-    path: '/content/:id',
-    name: 'Content',
-    component: ContentPage,
-    props: (route) => ({
+  { path: '/content/:id', name: 'Content', component: ContentPage, props: (route) => ({
       title: route.query.title,
       videoUrl: route.query.videoUrl,
-      text: route.query.text ? route.query.text.split('|') : []
+      text: route.query.text ? route.query.text.split('|') : [],
+      from: route.query.from,
+      pageTitle: route.query.pageTitle
     })
   },
-  { path: '/login', name: 'Login', component: LoginPage },
-  { path: '/reset-password', name: 'ResetPassword', component: ResetPasswordPage },
-  { path: '/register', name: 'Register', component: RegisterPage },
-  { path: '/terms', name: 'Terms', component: TermsPage },
-  { path: '/registration-success', name: 'RegistrationSuccess', component: RegistrationSuccessPage },
-  { path: '/identification', name: 'Identification', component: IdentificationPage }
+  { path: '/about', name: 'About', component: AboutPage }
 ];
 
 const router = createRouter({

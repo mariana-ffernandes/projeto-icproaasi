@@ -4,7 +4,7 @@
       <div class="left-side">
         <div class="header-container">
           <div class="logo-container">
-            <img src="@/assets/logoProAASI.png" alt="Logotipo do ProAASI" class="logo" />
+            <img src="@/assets/logoProAASI.png" alt="ProAASI Logo" class="logo" />
           </div>
           <h1 class="title">Pro<br>AASI</h1>
         </div>
@@ -14,8 +14,7 @@
         <div class="buttons-wrapper">
           <div class="buttons-container">
             <router-link to="/login" class="button">Entrar</router-link>
-            <router-link to="/register" class="button">Cadastrar</router-link>
-            <router-link to="/terms" class="button">Sobre o ProAASI</router-link>
+            <router-link to="/about" class="button">Sobre o ProAASI</router-link>
           </div>
         </div>
       </div>

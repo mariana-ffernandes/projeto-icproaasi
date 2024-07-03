@@ -1,48 +1,39 @@
 <template>
-    <div class="identification-page">
-      <div class="header">
-        <router-link to="/select-device" class="back-button">← voltar</router-link>
-        <h1 class="title">Identificação</h1>       
-      </div>
-      <div class="identification-container">
-        <div class="option" @click="selectUserType('user')">
-          <img src="@/assets/icon_retroauricular.png" alt="Usuário do aparelho" />
-          <p>Usuário do aparelho</p>
-        </div>
-        <div class="option" @click="selectUserType('partner')">
-          <img src="@/assets/icon_partner.png" alt="Parceiro(a) de comunicação" />
-          <p>Parceiro(a) de comunicação</p>
-        </div>
-      </div>
-      <button class="exit-button" @click="exit">Sair</button>
+  <div class="identification-page">
+    <div class="header">
+      <h1 class="title">Identificação</h1>
     </div>
-  </template>
-  
-  <script>
-  import { mapMutations, mapState } from 'vuex';
-  
-  export default {
-    name: 'IdentificationPage',
-    computed: {
-      ...mapState(['selectedItem'])
+    <div class="identification-container">
+      <div class="option" @click="selectUserType('user')">
+        <img src="@/assets/icon_retroauricular.png" alt="Usuário do aparelho" />
+        <p>Usuário do aparelho</p>
+      </div>
+      <div class="option" @click="selectUserType('partner')">
+        <img src="@/assets/icon_partner.png" alt="Parceiro(a) de comunicação" />
+        <p>Parceiro(a) de comunicação</p>
+      </div>
+    </div>
+    <button class="exit-button" @click="exit">Sair</button>
+  </div>
+</template>
+
+<script>
+import { mapMutations } from 'vuex';
+
+export default {
+  name: 'IdentificationPage',
+  methods: {
+    ...mapMutations(['setUserType']),
+    selectUserType(type) {
+      this.setUserType(type);
+      this.$router.push({ name: 'Menu' });
     },
-    methods: {
-      ...mapMutations(['setUserType']),
-      selectUserType(type) {
-        this.setUserType(type);
-        if (this.selectedItem === 'device-handling') {
-          this.$router.push({ name: 'DeviceHandling' });
-        } else if (this.selectedItem === 'communication-strategies') {
-          this.$router.push({ name: 'CommunicationStrategies' });
-        }
-      },
-      exit() {
-        this.$router.push('/');
-      }
+    exit() {
+      this.$router.push('/');
     }
   }
-  </script>
-
+}
+</script>
 <style scoped>
 .identification-page {
     text-align: center;

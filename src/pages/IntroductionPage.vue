@@ -1,29 +1,56 @@
 <template>
-    <div class="introduction-page">
-      <header class="header-container">
-        <button @click="goBack" class="back-button">← voltar</button>
-        <h1 class="title">Introdução ao Conteúdo</h1>
-      </header>
-      <main>
-        <p class="content">Este conteúdo está sendo elaborado</p>
-        <button @click="exit" class="exit-button">Sair</button>
-      </main>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'IntroductionPage',
-    methods: {
-      goBack() {
-        this.$router.go(-1);
-      },
-      exit() {
-      this.$router.push('/');
-    }
+  <div class="introduction-page">
+<header class="header-container">
+      <router-link to="/menu" class="back-button">← voltar</router-link> 
+      <h1 class="title">Introdução ao Conteúdo</h1>
+    </header>
+    <main>
+      <div class="buttons-container">
+        <button class="button-perda-auditiva" @click="navigateToContent('O que é a perda auditiva', 'https://www.youtube.com/embed/video-id-perda-auditiva', 'O que é a perda auditiva?')">O que é a perda auditiva</button>
+        <button class="button-funcao-aparelho" @click="navigateToContent('Qual a função do aparelho auditivo', 'https://www.youtube.com/embed/video-id-funcao-aparelho', 'Qual a função do aparelho auditivo?')">Qual a função do aparelho auditivo</button>
+      </div>
+    </main>
+  </div>
+</template>
+
+<script>
+import { mapState } from 'vuex';
+
+export default {
+  name: 'IntroductionPage',
+  computed: {
+    ...mapState(['userType'])
+  },
+  methods: {
+    navigateToContent(title, videoUrl, text) {
+      if (this.userType === 'partner') {
+        this.$router.push({
+          path: '/content/1',
+          query: {
+            title: 'Introdução ao Conteúdo',
+            videoUrl: 'https://www.youtube.com/embed/NHNPOmN8OFg',
+            text: 'Introdução ao conteúdo para parceiro de comunicação',
+            from: '/introduction',
+            pageTitle: 'Introdução ao Conteúdo'
+          }
+        });
+      } else {
+        this.$router.push({
+          path: '/content/1',
+          query: {
+            title: title,
+            videoUrl: videoUrl,
+            text: text,
+            from: '/introduction',
+            pageTitle: 'Introdução ao Conteúdo'
+          }
+        });
+      }
     }
   }
-  </script>
+}
+</script>
+
   
   <style scoped>
   .introduction-page {
@@ -57,12 +84,49 @@
   .title {
       color: var(--color-text-top);
       font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
+      font-weight: 600;
       font-size: 2rem;
       margin: 10px auto;
       text-align: center;
       width: fit-content;
     }
+
+    .buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .button-perda-auditiva {
+    background-color: var(--color-container-button);
+    border: none;
+    color: var(--color-black);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding: 10px;
+    width: 25rem;
+    height: 13rem;
+    cursor: pointer;
+    align-items: center;
+}
+
+.button-funcao-aparelho {
+  background-color: var(--color-container-button);
+    border: none;
+    color: var(--color-black);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding: 10px;
+    width: 25rem;
+    height: 13rem;
+    cursor: pointer;
+    align-items: center;
+}
   
   main {
     padding: 20px;
