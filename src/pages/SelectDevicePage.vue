@@ -38,58 +38,58 @@ export default {
       this.$router.push({ name: 'DeviceHandling' });
     },
     exit() {
-      this.$router.push('/');
+      this.$router.push('/identification');
     }
   }
 }
 </script>
-  
-  <style scoped>
-  .select-device {
+
+<style scoped>
+.select-device {
   text-align: center;
   padding: 20px;
-  }
-  
-  .back-button {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-top: 20px;
-    padding: 8px 20px; 
-    background-color: var(--color-background);
-    color: var(--color-black)000;
-    border: none;
-    cursor: pointer;
-    box-shadow: 5px 5px 1px -1px var(--color-text-top);    
-    text-align: center;
-    width: auto;
-    position: absolute;
-    top: 27%;
-    left: 20px;
-    margin: 10px;
-    }
-  
-  .title {
-    color: var(--color-text-top);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    margin: 25px auto;
-    text-align: center;
-    width: fit-content;
-    }
-    
-  .devices-container {
-    background-color: var(--color-container-button);
-    border: none;
-    color: var(--color-black);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px auto;
-    width: 95%;
-    height: 25rem;
+}
+
+.back-button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 20px;
+  padding: 8px 20px; 
+  background-color: var(--color-background);
+  color: var(--color-black)000;
+  border: none;
+  cursor: pointer;
+  box-shadow: 5px 5px 1px -1px var(--color-text-top);    
+  text-align: center;
+  width: auto;
+  position: absolute;
+  top: 27%;
+  left: 20px;
+  margin: 10px;
+}
+
+.title {
+  color: var(--color-text-top);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin: 25px auto;
+  text-align: center;
+  width: fit-content;
 }
   
-  .device {
+.devices-container {
+  background-color: var(--color-container-button);
+  border: none;
+  color: var(--color-black);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+  width: 95%;
+  height: 25rem;
+}
+
+.device {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,14 +97,9 @@ export default {
   cursor: pointer;
   width: 150px;
   word-wrap: break-word;
-  }
-  
-  /* .device img {
-  width: 100%;
-  height: auto; 
-  } */
-  
-  .device p {
+}
+
+.device p {
   margin-top: 10px;
   color: var(--color-text-container);
   font-family: 'Montserrat', sans-serif;
@@ -112,9 +107,9 @@ export default {
   font-weight: 500;
   text-align: center;
   white-space: normal;
-  }
-  
-  .exit-button {
+}
+
+.exit-button {
   font-size: 1rem;
   font-weight: 600;
   margin-top: 20px;
@@ -124,5 +119,5 @@ export default {
   border: none;
   cursor: pointer;
   box-shadow: 5px 5px 1px -1px var(--color-text-top);
-  }
-  </style>
+}
+</style>

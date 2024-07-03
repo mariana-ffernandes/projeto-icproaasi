@@ -1,13 +1,17 @@
 <template>
   <div class="device-handling-page">
     <header class="header-container">
-      <router-link to="/menu" class="back-button">← voltar</router-link> 
+      <router-link to="/select-device" class="back-button">← voltar</router-link> 
       <h1 class="title">Uso e Manuseio do Aparelho</h1>
     </header>
     <main>
       <div class="buttons-container">
-        <button v-for="(buttonText, topic) in buttonMappings" :key="topic" @click="navigateToContent(buttonText, getVideoUrl(topic), getText(topic))" class="handling-button">
-          {{ buttonText }}
+        <button 
+          v-for="(text, key) in deviceTexts[selectedDevice]" 
+          :key="key" 
+          @click="navigateToContent(deviceTitles[selectedDevice][key], getVideoUrl(selectedDevice, key), text)" 
+          class="handling-button">
+          {{ deviceTitles[selectedDevice][key] }}
         </button>
       </div>
       <button @click="exit" class="exit-button">Sair</button>
@@ -17,33 +21,23 @@
 
 <script>
 import { mapState } from 'vuex';
+import { texts, titles } from '@/texts';
 import { videos } from '@/videos';
-import { texts } from '@/texts';
 
 export default {
   name: 'DeviceHandlingPage',
   computed: {
     ...mapState(['selectedDevice']),
-    buttonMappings() {
-      return {
-        desligarLigar: 'Como ligar e desligar o AASI',
-        retirarColocarPilhas: 'Como colocar e retirar as pilhas',
-        tamanhoComprarPilha: 'Tamanho da pilha e onde comprar',
-        pilhaAcabando: 'Como saber que a pilha está acabando',
-        colocarRetirarAasi: 'Como colocar e retirar o AASI',
-        limpar: 'Como limpar o AASI',
-        trocarFiltroCera: 'Trocar o filtro de cera',
-        identificarOrelha: 'Como identificar qual AASI é de cada orelha',
-        guardarAparelho: 'Onde guardar o AASI'
-      };
+    deviceTexts() {
+      return texts;
+    },
+    deviceTitles() {
+      return titles;
     }
   },
   methods: {
-    getVideoUrl(topic) {
-      return videos[this.selectedDevice][topic];
-    },
-    getText(topic) {
-      return texts[topic];
+    getVideoUrl(device, topic) {
+      return videos[device][topic];
     },
     navigateToContent(title, videoUrl, text) {
       this.$router.push({
@@ -73,23 +67,25 @@ export default {
 .header-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   padding: 20px;
 }
 
 .back-button {
+  position: absolute;
+  top: 30px;
+  left: 20px;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
   padding: 8px 20px;
   background-color: var(--color-background);
-  color: var(--color-black);
+  color: var(--color-black)000;
   border: none;
   cursor: pointer;
   box-shadow: 5px 5px 1px -1px var(--color-text-top);
   text-align: center;
-  position: absolute;
-  left: 20px;
 }
 
 .title {
@@ -134,7 +130,7 @@ main {
   margin-top: 20px;
   padding: 8px 20px;
   background-color: var(--color-background);
-  color: var(--color-black);
+  color: var(--color-black)000;
   border: none;
   cursor: pointer;
   box-shadow: 5px 5px 1px -1px var(--color-text-top);
